@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TIDE console</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1022">
+<link rel="icon" type="image/png" href="/favicon.png?v=2">
+<link rel="stylesheet" href="/assets/style.css?v=1">
+<link rel="stylesheet" href="/assets/ndx.css?v=1">
+<style>
+.con { max-width: 980px; margin: 0 auto; padding: 110px 20px 80px; }
+.con h1 { font: 700 clamp(40px, 6vw, 72px)/1 ID; letter-spacing: -.04em; margin: 16px 0 0; }
+.con .lead { color: var(--mute); max-width: 60ch; }
+.step { margin-top: 18px; padding: 22px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); box-shadow: var(--sh-s); }
+.step h2 { font: 700 22px ID; margin: 0; letter-spacing: -.01em; } .step h2 span { font: 700 18px PX; color: var(--s1); margin-right: 8px; }
+.step p { color: var(--mute); margin: 8px 0 14px; font-size: 15px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.row label { font: 500 13px JB; color: var(--mute); display: flex; gap: 8px; align-items: center; }
+.row input { width: 120px; height: 40px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--card-2); color: var(--text); padding: 0 12px; font: 600 15px JB; }
+.stat { margin-top: 12px; font: 500 13px/1.6 JB; color: var(--mute); white-space: pre-wrap; word-break: break-word; } .stat.ok { color: var(--up); } .stat.err { color: var(--down); } .stat a { color: var(--s1); }
+.kv { display: grid; grid-template-columns: 180px 1fr; gap: 6px 14px; font: 500 13px JB; margin-top: 10px; } .kv span { color: var(--mute); } .kv b { color: var(--text); word-break: break-all; font-weight: 600; }
+.plan { margin-top: 12px; display: grid; gap: 6px; } .plan div { display: grid; grid-template-columns: 90px 1fr 1fr 1fr; gap: 10px; font: 500 13px JB; color: var(--mute); padding: 8px 10px; border-radius: 10px; background: var(--card-2); } .plan b { color: var(--text); }
+</style>
+</head>
+<body class="dark ndx">
+<nav class="nav" id="nav"><a class="nav-brand" href="/"><img src="/favicon.png" width="22" height="22" alt=""> <b>TIDE</b></a><div class="nav-links"><a href="/">site</a><a href="/docs">docs</a></div><button class="btn btn-ink btn-sm" id="connect">connect</button></nav>
+<main class="con">
+  <span class="kick">console · for the wallet that runs the TIDE reserve</span>
+  <h1>run the reserve.</h1>
+  <p class="lead">Every step is a transaction you sign in your own wallet. The wallet that creates the TIDE launchpad is the reserve: LaunchLab sends the 1% fee from every coin to it when it claims, it buys each coin's hedge, and under a coin's support line it spends that hedge buying the coin back.</p>
+  <div class="step"><h2><span>01</span>create the TIDE launchpad</h2><p>One transaction makes the TIDE launchpad on Raydium LaunchLab: 1% of every curve trade to this wallet, no creator fee, and at graduation half the LP burned and half kept as a Raydium fee key. Send the launchpad address over afterwards so the site can open the launcher.</p>
+    <div class="row"><button class="btn btn-ink" id="padBtn">create the launchpad</button><span class="mono" id="padInfo"></span></div><div class="stat" id="padStat"></div></div>
+  <div class="step"><h2><span>02</span>claim the fees</h2><p>Moves what every coin on the launchpad has paid from LaunchLab's vault to this wallet.</p>
+    <div class="row"><button class="btn btn-line" id="claimBtn">claim</button><span class="mono" id="vaultInfo"></span></div><div class="stat" id="claimStat"></div></div>
+  <div class="step"><h2><span>03</span>fill a coin's reserve</h2><p>Pick a coin, then spend SOL on its hedge, split the way its creator chose. Each coin's hedge is read from its on-chain metadata link. Swaps go through Jupiter; the wallet keeps 0.05 SOL for fees.</p>
+    <div class="row"><label>coin <select id="coinSel"><option value="">loading coins…</option></select></label><label>spend <input id="spendSol" type="number" min="0" step="0.05" value="0.1"> SOL</label><button class="btn btn-line" id="planBtn">plan</button><button class="btn btn-ink" id="buyBtn" disabled>buy</button></div>
+    <div class="plan" id="plan"></div><div class="stat" id="buyStat"></div></div>
+  <div class="step"><h2><span>04</span>defend a coin: buy back and burn</h2><p>Checks the coin against its support line (30% under its 24h high, from GeckoTerminal). Under the line, sell a slice of the reserve's holdings of that coin's hedge straight into the coin through Jupiter, then burn what the reserve bought. The rule: up to a fifth of the coin's share, at most once an hour.</p>
+    <div class="row"><label>coin <select id="dCoin"><option value="">loading coins…</option></select></label><button class="btn btn-line" id="dCheck">check the line</button><label>sell <input id="dPct" type="number" min="1" max="20" step="1" value="5"> % of each hedge</label><button class="btn btn-line" id="dPlan">plan</button><button class="btn btn-ink" id="dBuy" disabled>buy back</button><button class="btn btn-line" id="dBurn">burn bought coins</button></div>
+    <div class="kv" id="dInfo"></div><div class="plan" id="dPlanList"></div><div class="stat" id="dStat"></div></div>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="/assets/web3.min.js"></script>
+<script src="/assets/console.js?v=2"></script>
+</body>
+</html>

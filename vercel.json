@@ -1,0 +1,1 @@
+{ "functions": { "api/tide.js": { "maxDuration": 30 } }, "cleanUrls": true }
