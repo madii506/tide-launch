@@ -10,31 +10,25 @@
 <meta property="og:image" content="/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="/og.png">
-<meta name="theme-color" content="#050b15">
+<meta name="theme-color" content="#040a14">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=1">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png?v=1">
 <link rel="apple-touch-icon" href="/icon.png?v=1">
 <link rel="preload" href="/assets/fonts/interd-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/x.css?v=8">
+<link rel="stylesheet" href="/assets/t.css?v=1">
 </head>
 <body>
-<canvas id="bg" aria-hidden="true"></canvas>
-<a class="skip" href="#launch">skip to the launcher</a>
+<canvas id="sea" aria-hidden="true"></canvas><div class="grain" aria-hidden="true"></div>
 
-<nav class="nav" id="nav">
-  <div class="nav-links"><a href="#how">how it works</a><a href="#support">support line</a><a href="#launch">launch</a><a href="#hedges">reserves</a><a href="#coins">coins</a><a href="#faq">faq</a><a href="/docs">docs</a></div>
-  <button class="snd" id="snd" aria-label="sound on or off" title="sound"><span></span><span></span><span></span><span></span></button>
-  <button class="btn btn-go btn-sm" id="wallet">Connect wallet</button>
-  <div class="prog" aria-hidden="true"><i id="prog"></i></div>
-</nav>
+<header class="top" id="top"><div class="wrap">
+  <nav class="links" id="links"><a href="#line">support line</a><a href="#how">how it works</a><a href="#launch">launch</a><a href="#coins">coins</a><a href="#fee">the 1%</a><a href="#reserve">reserve</a><a href="#faq">faq</a><a href="/docs">docs</a></nav>
+  <span class="sp"></span><button class="btn sm go" id="wallet">Connect wallet</button>
+</div></header>
 
-<main id="top">
-
-<section class="hero2" id="hero">
-  <div class="fcard fl1" data-k="G" aria-hidden="true"></div><div class="fcard fl2" data-k="Q" aria-hidden="true"></div><div class="fcard fl3" data-k="V" aria-hidden="true"></div><div class="fcard fl4" data-k="S" aria-hidden="true"></div>
-  <div class="wrap h2wrap">
-    <div class="tmark" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs>
+<main>
+<section class="hero" id="hero"><div class="wrap">
+  <div class="mark" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs>
   <linearGradient id="hmw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4f3ff"/><stop offset=".45" stop-color="#78cff5"/><stop offset="1" stop-color="#2e7ae0"/></linearGradient>
   <linearGradient id="hmr" x1=".15" y1="0" x2=".85" y2="1"><stop offset="0" stop-color="#d8f2ff"/><stop offset="1" stop-color="#5aaeee"/></linearGradient>
   <radialGradient id="hmm" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bfe7ff"/></radialGradient>
@@ -44,221 +38,109 @@
   <circle cx="50" cy="26.5" r="7.6" fill="url(#hmm)"/>
   <g clip-path="url(#hmc)"><path d="M-6.0 57.94 L-4.5 57.45 L-3.0 57.09 L-1.5 56.87 L0.0 56.80 L1.5 56.87 L3.0 57.09 L4.5 57.45 L6.0 57.94 L7.5 58.53 L9.0 59.20 L10.5 59.94 L12.0 60.71 L13.5 61.49 L15.0 62.25 L16.5 62.95 L18.0 63.57 L19.5 64.08 L21.0 64.46 L22.5 64.68 L24.0 64.74 L25.5 64.62 L27.0 64.31 L28.5 63.81 L30.0 63.14 L31.5 62.30 L33.0 61.31 L34.5 60.20 L36.0 59.00 L37.5 57.74 L39.0 56.47 L40.5 55.24 L42.0 54.08 L43.5 53.04 L45.0 52.16 L46.5 51.48 L48.0 51.02 L49.5 50.81 L51.0 50.86 L52.5 51.15 L54.0 51.68 L55.5 52.43 L57.0 53.37 L58.5 54.45 L60.0 55.64 L61.5 56.89 L63.0 58.16 L64.5 59.41 L66.0 60.58 L67.5 61.65 L69.0 62.60 L70.5 63.38 L72.0 64.00 L73.5 64.43 L75.0 64.68 L76.5 64.74 L78.0 64.62 L79.5 64.35 L81.0 63.92 L82.5 63.37 L84.0 62.72 L85.5 62.00 L87.0 61.24 L88.5 60.46 L90.0 59.69 L91.5 58.97 L93.0 58.32 L94.5 57.76 L96.0 57.32 L97.5 57.00 L99.0 56.83 L100.5 56.81 L102.0 56.93 L103.5 57.20 L105.0 57.60 L110 110 L-10 110Z" fill="url(#hmw)"/>
   <path d="M-6.0 73.02 L-4.5 72.63 L-3.0 72.34 L-1.5 72.16 L0.0 72.10 L1.5 72.16 L3.0 72.34 L4.5 72.63 L6.0 73.02 L7.5 73.50 L9.0 74.05 L10.5 74.65 L12.0 75.28 L13.5 75.91 L15.0 76.53 L16.5 77.10 L18.0 77.62 L19.5 78.05 L21.0 78.37 L22.5 78.59 L24.0 78.67 L25.5 78.62 L27.0 78.44 L28.5 78.12 L30.0 77.66 L31.5 77.09 L33.0 76.42 L34.5 75.66 L36.0 74.83 L37.5 73.98 L39.0 73.12 L40.5 72.28 L42.0 71.50 L43.5 70.80 L45.0 70.21 L46.5 69.75 L48.0 69.45 L49.5 69.31 L51.0 69.34 L52.5 69.53 L54.0 69.89 L55.5 70.39 L57.0 71.02 L58.5 71.75 L60.0 72.55 L61.5 73.40 L63.0 74.27 L64.5 75.11 L66.0 75.92 L67.5 76.65 L69.0 77.29 L70.5 77.83 L72.0 78.24 L73.5 78.52 L75.0 78.66 L76.5 78.66 L78.0 78.53 L79.5 78.28 L81.0 77.91 L82.5 77.45 L84.0 76.92 L85.5 76.33 L87.0 75.70 L88.5 75.07 L90.0 74.44 L91.5 73.86 L93.0 73.33 L94.5 72.88 L96.0 72.52 L97.5 72.27 L99.0 72.13 L100.5 72.11 L102.0 72.21 L103.5 72.42 L105.0 72.75" stroke="#081321" stroke-width="3.4" fill="none" stroke-linecap="round"/></g></g></svg></div>
-    <h1 class="h1">Every coin gets a<br><span class="hl">support line</span>.</h1>
-    <p class="sub">Launch a coin in one signature. 1% of every trade fills its reserve with a hedge. When the coin falls below its support line, the reserve buys it back.</p>
-    <div class="cta"><a class="btn btn-go" href="#launch">Launch a coin →</a><a class="btn" href="#support">See the support line</a></div>
-  </div>
-  <div class="wrap">
-    <div class="wrv rv"><div class="wfloat">
-    <div class="win" id="win">
-      <div class="w2-top">
-        <div class="seg" id="w2Mix" aria-label="reserve mix"><i class="seg-pill"></i><button data-v="classic" class="on">Balanced</button><button data-v="shield">Storm</button><button data-v="haven">Steady</button><button data-v="metal">Gold</button></div>
-        <div class="seg sm" id="w2Rng" aria-label="range"><i class="seg-pill"></i><button data-v="d1">24h</button><button data-v="d3">3d</button><button data-v="d7">7d</button><button data-v="all" class="on">15d</button></div>
-        <span class="win-live"><i></i>live</span>
-      </div>
-      <div class="win-body">
-        <div class="wb-main">
-          <small class="w2-lbl" id="w2Lbl">balanced</small>
-          <b class="wb-big" id="hwFour">—</b>
-          <div class="wb-vs"><span>S&amp;P 500 <b id="hwSpy">—</b></span><span>vs stocks <b id="hwGap">—</b></span><span>stocks down today <b id="hwDn">—</b></span></div>
-          <div class="wb-chart" id="w2Box"><canvas id="w2Chart" aria-label="the S&amp;P 500 against the hedge mix"></canvas><div class="w2-tip" id="w2Tip" hidden></div><div class="w2-wait" id="w2Wait">reading 15 days of prices…</div></div>
-          <div class="wb-leg"><span class="lg spy">the S&amp;P 500</span><span class="lg ndx" id="w2LgMix">balanced</span><span class="lg ov" id="w2LgOv" hidden></span><span class="w2-hint">how each reserve moved against stocks · scrub the chart</span></div>
-        </div>
-        <div class="wb-side"><div class="w2-list" id="hwList"><div class="empty">reading the market…</div></div></div>
-      </div>
+  <h1>Every coin gets a<br><span class="line">support line.</span></h1>
+  <p class="lede">Launch a coin in one signature. 1% of every trade fills its reserve with a hedge. When the coin falls below its support line, the reserve buys it back and burns it.</p>
+  <div class="cta"><a class="btn go" href="#launch">Launch a coin →</a><a class="btn" href="#line">Watch the line work</a></div>
+  <div class="live3"><div><small>S&amp;P 500 · 24h</small><b id="lSpy">—</b></div><div><small>stocks down today</small><b id="lDn">—</b></div><div><small>storm reserve · 24h</small><b id="lStorm">—</b></div></div>
+</div><span class="cue" aria-hidden="true"></span></section>
+
+<section class="sec" id="line"><div class="wrap">
+  <div class="head rv"><span class="eye"><i></i>the support line</span><h2>Calm fills it.<br>Dumps spend it.</h2><p class="sub">Every trade drips 1% into the coin's reserve. When the price breaks 30% under its 24h high, the reserve buys the coin back. Press crash and watch.</p></div>
+  <div class="card sim rv">
+    <div class="sim-l">
+      <div class="sim-bar"><button class="chip on" data-m="calm">Calm</button><button class="chip red" data-m="crash">Crash</button><button class="chip" data-m="reset">Reset</button><span class="tag">illustration · not a real coin</span></div>
+      <canvas id="simCv" aria-label="a price line, its support line and the reserve buying back"></canvas>
     </div>
-    </div></div>
-  </div>
-</section>
-
-<div class="river" aria-label="live prices"><div class="tape-in" id="tape"><span>loading live prices…</span></div></div>
-
-<section class="band" id="how">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>how it works</p><h2 class="h2c rv">High tide fills it. Low tide spends it.</h2><p class="subc rv">Every coin launched on TIDE carries its own reserve and a support line under its price.</p></div>
-    <div class="how3">
-      <div class="hcard rv"><div class="hv hvp"><div class="pchips"><button data-p="classic" class="on">Balanced</button><button data-p="shield">Storm</button><button data-p="haven">Steady</button><button data-p="metal">Gold</button><button data-p="custom">Custom</button></div><div class="pbar"><i style="flex:25;background:var(--s1)"></i><i style="flex:25;background:var(--s2)"></i><i style="flex:25;background:var(--s3)"></i><i style="flex:25;background:var(--s4)"></i></div><p class="pleg" id="howLeg">25% gold · 25% short Nasdaq · 25% VIX · 25% dollars</p></div><span class="hn">01</span><h3>Launch with a reserve</h3><p>Pick what the reserve holds: gold, silver, the short Nasdaq, VIX or cash. Name the coin and sign once. It launches on Raydium LaunchLab.</p></div>
-      <div class="hcard rv" style="--d:1"><div class="hv hv3" id="howBars"><div><i style="--c:var(--s1)"></i><span>gold</span></div><div><i style="--c:var(--s2)"></i><span>SQQQ</span></div><div><i style="--c:var(--s3)"></i><span>VIX</span></div><div><i style="--c:var(--s4)"></i><span>USD</span></div></div><span class="hn">02</span><h3>High tide fills it</h3><p>1% of every trade goes to the reserve, which buys the coin's hedge. In calm markets the reserve just grows.</p></div>
-      <div class="hcard rv" style="--d:2"><div class="hv"><svg class="sline" viewBox="0 0 300 150" aria-hidden="true"><defs><linearGradient id="slg" x1="0" x2="1"><stop offset="0" stop-color="#9be1ff"/><stop offset="1" stop-color="#3d8ff0"/></linearGradient></defs><line class="sup" x1="10" y1="104" x2="290" y2="104"/><path class="px" d="M10 40 L40 34 L62 52 L84 44 L108 70 L128 62 L150 92 L166 104 L182 100 L196 104 L214 86 L236 78 L258 60 L290 46"/><g class="buys"><circle cx="166" cy="104" r="5"/><circle cx="196" cy="104" r="5"/></g><text x="12" y="124">support line</text><text class="bt" x="150" y="134">reserve buys</text></svg></div><span class="hn">03</span><h3>Low tide spends it</h3><p>When the coin falls below its support line, the reserve sells hedge and buys the coin back, then burns it. Every buy is public.</p></div>
+    <div class="sim-r">
+      <div class="vessel" id="vessel"><div class="water"></div><b id="vLvl">40%</b><small>the reserve</small></div>
+      <div class="kv"><div>support line<b id="vLine">—</b></div><div>price<b id="vPx">—</b></div><div>buybacks<b id="vBuys">0</b></div><div>burned<b id="vBurn">0</b></div></div>
+      <div class="status" id="vStat">above the line · filling</div>
     </div>
   </div>
-</section>
-
-<section class="band" id="support">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>the support line</p><h2 class="h2c rv">The hedge pays for the dip.</h2><p class="subc rv">A reserve that holds a hedge is usually worth the most exactly when a coin needs it: crashes pump the short Nasdaq and VIX.</p></div>
-    <div class="srule rv">
-      <div class="sr"><b>30%</b><span>The support line sits 30% under the coin's highest price of the last 24 hours.</span></div>
-      <div class="sr"><b>1 / 5</b><span>Under the line, the reserve spends up to a fifth of that coin's share per buyback, at most once an hour.</span></div>
-      <div class="sr"><b>burned</b><span>Bought-back coins are burned on-chain. The supply only goes down.</span></div>
-      <div class="sr"><b>public</b><span>Every fill, swap, buyback and burn is a transaction on Solscan, listed on the coin and in the reserve.</span></div>
-    </div>
-    <p class="snote rv">A reserve slows a dump; it can't stop a big one. There is no floor and no promise. In this first version the reserve wallet signs each buyback from the operator console.</p>
+  <div class="rules">
+    <div class="card rule rv"><b class="g">30%</b><span>The support line sits 30% under the coin's highest price of the last 24 hours.</span></div>
+    <div class="card rule rv" style="--d:1"><b class="g">1 / 5</b><span>Under the line, a buyback spends up to a fifth of the coin's share, at most once an hour.</span></div>
+    <div class="card rule rv" style="--d:2"><b class="g">burned</b><span>Coins the reserve buys back are burned on-chain. Supply only goes down.</span></div>
+    <div class="card rule rv" style="--d:3"><b class="g">public</b><span>Every fill, swap, buyback and burn is a transaction on Solscan.</span></div>
   </div>
-</section>
+  <p class="note rv">A reserve slows a dump; it can't stop a big one. There is no floor. In this first version the reserve wallet signs each buyback from the operator console.</p>
+</div></section>
 
-<section class="band" id="launch">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>the launcher</p><h2 class="h2c rv">Launch with a support line.</h2><p class="subc rv">Pick the reserve, name the coin, sign once. It launches on Raydium LaunchLab and starts trading right away.</p></div>
-    <div class="lcard rv">
-      <div class="lsteps" id="lsteps"><span class="on" data-s="1">1 · Reserve</span><span data-s="2">2 · Coin</span><span data-s="3">3 · Launch</span><em id="padState">reading the launchpad…</em></div>
-      <div class="lgrid">
-        <div class="lcol">
-          <h3>Pick the reserve</h3>
-          <div class="presets2" id="presets2"></div>
-          <div class="assets9" id="assets9"></div>
-          <div class="splitbar" id="splitbar"></div>
-          <p class="hint" id="splitTxt"></p>
-        </div>
-        <div class="lcol">
-          <h3>Your coin</h3>
-          <label class="fld"><span>Name</span><input id="cName" maxlength="32" placeholder="Low Tide" autocomplete="off"></label>
-          <label class="fld"><span>Ticker</span><input id="cSym" maxlength="10" placeholder="EBB" autocomplete="off"></label>
-          <div class="fld"><span>Image</span><div class="imgs" id="imgs"></div><input id="cImg" placeholder="or paste an https image link" autocomplete="off"></div>
-          <label class="fld"><span>First buy (optional)</span><div class="inl"><input id="cBuy" type="number" min="0" max="20" step="0.1" placeholder="0"><em>SOL</em></div></label>
-        </div>
-        <div class="lcol lsum">
-          <h3>Launch</h3>
-          <div class="preview" id="preview"></div>
-          <ul class="checks"><li>Raydium LaunchLab · 1,000,000,000 supply</li><li>Graduates to a Raydium pool at 85 SOL</li><li>1% of every trade fills its reserve</li><li>Support line 30% under the 24h high</li><li>No creator fee, no TIDE cut</li></ul>
-          <button class="btn btn-go lbtn" id="launchBtn">Connect wallet</button>
-          <div class="lstat" id="lstat" aria-live="polite"></div>
-        </div>
-      </div>
+<section class="sec" id="how"><div class="wrap story">
+  <div class="story-l">
+    <span class="eye"><i></i>how it works</span><h2>Three tides.<br>One signature.</h2>
+    <div class="steps" id="steps">
+      <div class="step on" data-i="0"><em>01</em><h3>Launch with a reserve</h3><p>Pick what the reserve holds and sign once on Raydium LaunchLab.</p></div>
+      <div class="step" data-i="1"><em>02</em><h3>High tide fills it</h3><p>1% of every trade buys the coin's hedge. Calm markets just grow it.</p></div>
+      <div class="step" data-i="2"><em>03</em><h3>Low tide spends it</h3><p>Under the line, the reserve sells hedge, buys the coin back and burns it.</p></div>
     </div>
   </div>
-</section>
-
-<section class="band" id="hedges">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>reserves · live</p><h2 class="h2c rv">Nine things a reserve can hold.</h2><p class="subc rv">Every asset trades on Solana and can be bought through Jupiter. Tap ＋ on up to four to build your own reserve.</p></div>
-    <div class="hgrid" id="hgrid"></div>
-    <div class="htray" id="htray" hidden><span class="ht-l">Your reserve</span><div class="ht-c" id="htChips"></div><button class="btn btn-go btn-sm" id="htGo">Launch with this →</button></div>
+  <div class="story-r">
+    <div class="card panel on" data-i="0"><div><svg class="donut" id="howDonut" viewBox="0 0 240 240"></svg><div class="mixlbl"><b id="howMix">Balanced</b><span id="howTxt">gold, short Nasdaq, VIX and dollars</span></div></div></div>
+    <div class="card panel" data-i="1"><div><div class="fill"><i class="drop" style="left:20%"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i><div class="water"></div></div><p class="fill-lbl"><b>1%</b> of every buy and sell</p></div></div>
+    <div class="card panel" data-i="2"><svg class="sline" viewBox="0 0 420 220" aria-hidden="true"><defs><linearGradient id="slg" x1="0" x2="1"><stop offset="0" stop-color="#a8e6ff"/><stop offset="1" stop-color="#3d8ff0"/></linearGradient></defs><line class="sup" x1="10" y1="150" x2="410" y2="150"/><path class="px" d="M10 50 L50 40 L84 66 L116 54 L150 96 L178 84 L208 130 L232 150 L256 142 L278 150 L304 118 L336 104 L368 80 L410 62"/><circle class="bb" cx="232" cy="150" r="7"/><circle class="bb" cx="278" cy="150" r="7"/><text x="12" y="176">support line</text><text class="b" x="214" y="196">reserve buys, burns</text></svg></div>
   </div>
-</section>
+</div></section>
 
-<section class="band" id="stocks">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>real stocks · live</p><h2 class="h2c rv">When these fall, reserves wake up.</h2><p class="subc rv">Twenty real stocks trading on Solana as tokens. Red when they fall.</p></div>
-    <div class="btool"><div class="seg sm" id="bsSort" aria-label="sort"><i class="seg-pill"></i><button data-v="dn" class="on">falling first</button><button data-v="up">rising first</button><button data-v="az">A–Z</button></div></div>
-    <div class="board">
-      <div class="bsum rv">
-        <b id="bsN">—</b><span id="bsT">reading the market…</span>
-        <div class="bvs"><div><small>stocks, average</small><b id="bsA">—</b></div><div><small>the balanced reserve</small><b id="bsF">—</b></div></div>
-      </div>
-      <div class="tiles" id="tiles"></div>
+<section class="sec" id="launch"><div class="wrap">
+  <div class="head c rv"><span class="eye"><i></i>the launcher</span><h2>Launch with a support line.</h2><p class="sub">Pick the reserve, name the coin, sign once. It launches on Raydium LaunchLab and trades right away.</p></div>
+  <div class="card lgrid rv">
+    <div class="lcol"><h3>1 · the reserve</h3><div class="presets" id="presets"></div><div class="assets" id="assets"><div class="empty" style="padding:24px">reading prices…</div></div></div>
+    <div class="lcol mixwrap"><h3>the mix</h3><svg class="donut" id="mixDonut" viewBox="0 0 240 240"></svg><p class="split" id="splitTxt"></p></div>
+    <div class="lcol"><h3>2 · the coin</h3>
+      <label class="fld"><span>Name</span><input id="cName" maxlength="32" placeholder="Low Tide" autocomplete="off"></label>
+      <label class="fld"><span>Ticker</span><input id="cSym" maxlength="10" placeholder="EBB" autocomplete="off"></label>
+      <div class="fld"><span>Image</span><div class="imgs" id="imgs"></div><input id="cImg" placeholder="or paste an https image link" autocomplete="off"></div>
+      <label class="fld"><span>First buy, SOL (optional)</span><input id="cBuy" type="number" min="0" max="20" step="0.1" placeholder="0"></label>
+      <div class="padst" id="padSt"><i></i>reading the launchpad…</div>
+      <div class="prev" id="prev"></div>
+      <button class="btn go lbtn" id="launchBtn">Connect wallet</button>
+      <div class="lstat" id="lstat" aria-live="polite"></div>
+      <ul class="facts"><li>1,000,000,000 supply, no mint or freeze authority</li><li>graduates to a Raydium pool at 85 SOL</li><li>1% of every trade fills its reserve · no creator fee</li></ul>
     </div>
   </div>
-</section>
+</div></section>
 
-<section class="band" id="coins">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>launched on TIDE</p><h2 class="h2c rv">Coins with a support line.</h2><p class="subc rv">Every coin on the TIDE launchpad, newest first, with what its reserve holds. Read from Raydium.</p></div>
-    <div class="cgrid2" id="cgrid"><div class="empty">reading the launchpad…</div></div>
+<section class="sec" id="coins"><div class="wrap">
+  <div class="head rv"><span class="eye"><i></i>launched on TIDE</span><h2>Coins with a support line.</h2><p class="sub">Every coin on the TIDE launchpad, newest first, with what its reserve holds. Read from Raydium.</p></div>
+  <div class="coins" id="coinGrid"><div class="empty">reading the launchpad…</div></div>
+</div></section>
+
+<section class="sec" id="fee"><div class="wrap">
+  <div class="card fee rv">
+    <div class="fee-l"><span class="eye"><i></i>the 1%</span><div class="big1 g">1%</div><p class="sub">Of every trade, straight into the coin's reserve. Set in Raydium LaunchLab's program, the same for every coin.</p>
+      <div class="splits"><div>the reserve<b>1%</b></div><div>Raydium LaunchLab<b>0.25%</b></div><div>the creator<b>0%</b></div><div>TIDE<b>0%</b></div></div></div>
+    <div class="fee-r"><h3 class="calc-h">If a coin trades <span class="g" id="cVol">100 SOL</span> on its curve</h3>
+      <input type="range" id="cRange" min="0" max="1000" value="541" aria-label="SOL traded on the curve">
+      <div class="ticks"><span>1</span><span>10</span><span>100</span><span>1K</span><span>5K SOL</span></div>
+      <div class="presets" id="cMix" style="margin-top:22px"></div>
+      <div class="ctot"><b class="g" id="cOut">1.00 SOL</b><span class="split" id="cUsd">fills its reserve</span></div>
+      <div class="cout" id="cRows"></div></div>
   </div>
-</section>
+</div></section>
 
-<section class="band" id="fees">
-  <div class="wrap">
-    <div class="feecard rv">
-      <div class="fc-l">
-        <p class="kick"><i></i>the split</p>
-        <h2 class="h2c left">1% of every trade.<br><span class="g">Straight into its reserve.</span></h2>
-        <div class="fbar"><div class="f1"><b>1%</b><small>the reserve</small></div><div class="f2"><b>0.25%</b><small>LaunchLab</small></div><div class="f3"><b>0%</b><small>creator · TIDE</small></div></div>
-        <ul class="flist">
-          <li><i>↻</i><div><b>Raydium LaunchLab's own fee</b><span>The 1% is the launchpad fee, set in LaunchLab's program when the TIDE launchpad was made. It can't be changed per coin.</span></div></li>
-          <li><i>⌁</i><div><b>Saved for that coin's dips</b><span>The reserve claims the fees, reads each coin's hedge from its metadata link on-chain and buys it through Jupiter. It spends it back on the coin under the support line.</span></div></li>
-          <li><i>◆</i><div><b>It keeps paying after graduation</b><span>At 85 SOL a coin moves to a Raydium pool. Half the LP is burned, half is a fee key that keeps filling the reserve.</span></div></li>
-        </ul>
-      </div>
-      <div class="fc-r">
-        <div class="term">
-          <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><span>a launch on TIDE · Raydium LaunchLab</span></div>
-          <pre><span class="ok">✓</span> launchpad              <span class="m">TIDE</span>
-<span class="ok">✓</span> fee rate               <span class="m">1% → the reserve</span>
-<span class="ok">✓</span> creator fee            <span class="m">0</span>
-<span class="ok">✓</span> supply                 <span class="m">1,000,000,000</span>
-<span class="ok">✓</span> mint / freeze auth.    <span class="m">none</span>
-<span class="ok">✓</span> migrate                <span class="m">Raydium CPMM at 85 SOL</span>
-<span class="ok">✓</span> LP at graduation       <span class="m">50% burned · 50% fee key</span>
-<span class="ok">✓</span> reserve                <span class="m">in the metadata link, e.g. h=G50U50</span>
-<span class="ok">✓</span> support line           <span class="m">30% under the 24h high</span>
+<section class="sec" id="reserve"><div class="wrap">
+  <div class="head c rv"><span class="eye"><i></i>the reserve</span><h2>Everything it holds, on-chain.</h2><p class="sub">One public wallet fills and spends the reserve for every coin on TIDE. Its holdings, live.</p></div>
+  <div class="res" id="resGrid"></div>
+  <div class="resum" id="resSum"></div>
+</div></section>
 
-<span class="c">launchLab program</span>  LanMV9…duJ3uj
-<span class="c">network</span>            Solana mainnet</pre>
-          <div class="term-pills"><span>one signature</span><span>no creator fee</span><span>public reserve</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="calc rv" id="calc">
-      <div class="calc-l">
-        <p class="kick"><i></i>try it</p>
-        <h3 class="calc-h">If a coin trades <b id="cVol">100 SOL</b> on its curve</h3>
-        <input type="range" id="cRange" min="0" max="1000" value="541" aria-label="SOL traded on the curve">
-        <div class="calc-ticks"><span style="left:0">1</span><span style="left:27%">10</span><span style="left:54.1%">100</span><span style="left:81.1%">1K</span><span style="left:100%">5K</span></div>
-        <div class="seg sm" id="cMix" aria-label="reserve mix"></div>
-      </div>
-      <div class="calc-r">
-        <div class="cbig"><b id="cOut">1.00 SOL</b><span id="cUsd">fills its reserve</span></div>
-        <div class="cbars" id="cBars"></div>
-        <div class="cfoot"><span>LaunchLab <b id="cLL">0.25 SOL</b></span><span>creator <b>0</b></span><span>TIDE <b>0</b></span></div>
-      </div>
-    </div>
+<section class="sec" id="faq"><div class="wrap">
+  <div class="head c rv"><span class="eye"><i></i>faq</span><h2>Questions, answered.</h2></div>
+  <div class="faq">
+    <details><summary>What is TIDE?</summary><p>A launchpad on Raydium LaunchLab where every coin gets a reserve and a support line. 1% of each coin's trading fills its reserve with a hedge. When the coin falls 30% under its 24h high, the reserve buys it back and burns it.</p></details>
+    <details><summary>Why hold a hedge instead of SOL?</summary><p>A hedge tends to be worth the most when everything else is red. Crashes pump the short Nasdaq and VIX, and gold often holds. That's exactly when coins dump.</p></details>
+    <details><summary>Is the support line a floor?</summary><p>No. A reserve slows a dump; it can't stop a big one. A coin can still go to zero.</p></details>
+    <details><summary>Who signs the buybacks?</summary><p>The reserve wallet, from the operator console. In this first version a person presses the button when a coin is under its line. Every buyback and burn is public on Solscan.</p></details>
+    <details><summary>What can a reserve hold?</summary><p>Up to four of nine assets: gold (GLDx, PAXG, XAUt0), silver (SLVon), the short Nasdaq (SQQQ), VIX (UVXY), dollars (USDC, USDT) and euros (EURC). Or a ready mix: balanced, storm, steady or gold.</p></details>
+    <details><summary>What does it cost to launch?</summary><p>Only Solana network fees and rent, about 0.03 SOL. A first buy is optional. TIDE takes nothing.</p></details>
+    <details><summary>Can the reserve mix change later?</summary><p>No. It's written into the coin's metadata link at launch. Launch a new coin for a new mix.</p></details>
+    <details><summary>Where do the prices come from?</summary><p>Dexscreener for live prices, GeckoTerminal for history, and Raydium's launch index for the coins on TIDE.</p></details>
   </div>
-</section>
-
-<section class="band" id="treasury">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>the reserve</p><h2 class="h2c rv">Everything it holds, on-chain.</h2><p class="subc rv">One public wallet fills and spends the reserve for every coin on TIDE. These are its holdings of each asset, live.</p></div>
-    <div class="vaults v9" id="vaults"></div>
-    <div class="tsum rv"><span>held <b id="held">—</b></span><span>fees waiting to be claimed <b id="unclaimed">—</b></span><span id="treWallet"></span></div>
-    <div class="acts rv"><div id="activity"></div></div>
-  </div>
-</section>
-
-<section class="band" id="rules">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>the fine print, on-chain</p><h2 class="h2c rv">Rules nobody can bend.</h2></div>
-    <div class="rules6">
-      <div class="rcard rv"><span>01</span><h3>The reserve, on-chain</h3><p>What the reserve holds is written into your coin's metadata link at launch. Anyone can read it, nobody can edit it.</p></div>
-      <div class="rcard rv" style="--d:1"><span>02</span><h3>1% of every trade</h3><p>The launchpad fee fills the reserve. It's set in Raydium LaunchLab, not by this website.</p></div>
-      <div class="rcard rv" style="--d:2"><span>03</span><h3>One support line</h3><p>30% under the coin's 24h high, the same for every coin. Under it the reserve buys back, at most once an hour.</p></div>
-      <div class="rcard rv"><span>04</span><h3>Bought back, burned</h3><p>Coins the reserve buys are burned. Every coin: 1,000,000,000 tokens, no mint or freeze authority.</p></div>
-      <div class="rcard rv" style="--d:1"><span>05</span><h3>Half the LP burned</h3><p>At graduation half the liquidity is burned for good, the other half keeps filling the reserve.</p></div>
-      <div class="rcard rv" style="--d:2"><span>06</span><h3>No creator fee, no cut</h3><p>Nobody takes a share of trades besides the reserve and LaunchLab's own 0.25%.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="pools">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>under the hood</p><h2 class="h2c rv">Where the reserve trades.</h2><p class="subc rv">The deepest Solana pool for each asset, live. The reserve buys and sells through Jupiter, which routes across all of them.</p></div>
-    <div class="ptab rv" id="poolList"><div class="empty">loading…</div></div>
-  </div>
-</section>
-
-<section class="band" id="faq">
-  <div class="wrap">
-    <div class="shc"><p class="kick"><i></i>faq</p><h2 class="h2c rv">Questions, answered.</h2></div>
-    <div class="faq2">
-      <details><summary>What is TIDE?</summary><p>A launchpad on Raydium LaunchLab where every coin gets a reserve and a support line. 1% of each coin's trading fills its reserve with a hedge. When the coin falls 30% under its 24h high, the reserve buys it back and burns it.</p></details>
-      <details><summary>Why hold a hedge instead of SOL?</summary><p>Because a hedge tends to be worth the most when everything else is red. Crashes pump the short Nasdaq and VIX, and gold often holds. That's when coins dump and a reserve is needed.</p></details>
-      <details><summary>Is the support line a floor?</summary><p>No. A reserve slows a dump; it can't stop a big one. A coin can still go to zero.</p></details>
-      <details><summary>Who signs the buybacks?</summary><p>The reserve wallet, from the operator console on this site. In this first version a person presses the button when a coin is under its line. Every buyback and burn is public on Solscan.</p></details>
-      <details><summary>What can a reserve hold?</summary><p>Up to four of nine assets: gold (GLDx, PAXG, XAUt0), silver (SLVon), the short Nasdaq (SQQQ), VIX (UVXY), dollars (USDC, USDT) and euros (EURC). Or a ready mix: balanced, storm, steady or gold.</p></details>
-      <details><summary>How much does it cost to launch?</summary><p>Only Solana network fees and rent, about 0.03 SOL. A first buy is optional. TIDE takes nothing.</p></details>
-      <details><summary>Can the reserve mix change later?</summary><p>No. It's written into the coin's metadata link when you launch. Launch a new coin for a new mix.</p></details>
-      <details><summary>Where do the prices come from?</summary><p>Dexscreener for live prices, GeckoTerminal for history, and Raydium's launch index for the coins on TIDE.</p></details>
-    </div>
-  </div>
-</section>
-
-
+</div></section>
 </main>
-
+<footer class="end"><a href="/docs">docs</a><a href="/console">console</a><a href="/api/tide?a=basket">api</a></footer>
 <div class="toast" id="toast" role="status"></div>
-<script src="/assets/art.js" defer></script>
-<script src="/assets/sound.js" defer></script>
-<script src="/assets/x.js?v=8" defer></script>
+<script src="/assets/t.js?v=1" defer></script>
 </body>
 </html>
