@@ -176,3 +176,10 @@ h2 { margin: 16px 0 0; font: 700 clamp(32px, 4.4vw, 58px)/1.02 var(--disp); lett
 @media (max-width: 620px) { .wrap { padding: 0 18px; } .sec { padding: 84px 0; } .lgrid { grid-template-columns: 1fr; } .lcol + .lcol { border-left: 0; border-top: 1px solid var(--line); } .coins, .res, .rules { grid-template-columns: 1fr; } #simCv { height: 240px; } .live3 div { min-width: 0; flex: 1 1 40%; } .sim-r { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } .mark, .cue::after { animation: none; } html { scroll-behavior: auto; } }
 .mixwrap { align-content: start; } .mixwrap .donut { margin-top: 36px; }
+/* centred navbar */
+.top .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.top .sp { display: none; }
+.links { grid-column: 2; padding: 5px; border-radius: 15px; background: rgba(10, 22, 40, .55); border: 1px solid var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.top.sc .links { background: rgba(10, 22, 40, .35); }
+#wallet { grid-column: 3; justify-self: end; }
+@media (max-width: 860px) { .top .wrap { grid-template-columns: 1fr auto; } #wallet { grid-column: 2; } }
