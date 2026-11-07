@@ -183,3 +183,13 @@ h2 { margin: 16px 0 0; font: 700 clamp(32px, 4.4vw, 58px)/1.02 var(--disp); lett
 .top.sc .links { background: rgba(10, 22, 40, .35); }
 #wallet { grid-column: 3; justify-self: end; }
 @media (max-width: 860px) { .top .wrap { grid-template-columns: 1fr auto; } #wallet { grid-column: 2; } }
+
+/* the contract address, top-left, tap to copy */
+.ca { grid-column: 1; justify-self: start; display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 6px 0 12px; border-radius: 11px; border: 1px solid rgba(168, 230, 255, .18); background: rgba(10, 22, 40, .55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); cursor: pointer; transition: border-color .25s, transform .25s var(--ease); }
+.ca:hover { border-color: rgba(168, 230, 255, .4); transform: translateY(-1px); }
+.ca em { font: 700 11px var(--mono); font-style: normal; color: var(--ice); letter-spacing: .06em; }
+.ca span { font: 500 13px var(--mono); color: var(--ink); }
+.ca i { font: 600 11.5px var(--sans); font-style: normal; padding: 5px 9px; border-radius: 8px; background: rgba(168, 230, 255, .1); color: var(--ice); transition: background .25s, color .25s; }
+.ca.ok i { background: var(--up); color: #04121f; }
+@media (max-width: 860px) { .ca { grid-column: 1; } }
+@media (max-width: 380px) { .ca em { display: none; } }

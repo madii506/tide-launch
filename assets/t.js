@@ -151,5 +151,8 @@
   async function loadBasket() { try { S.b = await api('basket'); renderLive(); launchInit(); renderPrices(); launchBtn(); calcInit(); if (!S.tre) loadReserve(); } catch (e) { setT('#lSpy', 'busy'); } }
   function reveals() { if (RM) { $$('.rv').forEach(e => e.classList.add('in')); return; } const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' }); $$('.rv').forEach(e => io.observe(e)); }
   function nav() { const top = $('#top'), links = $$('#links a[href^="#"]'); const f = () => { top.classList.toggle('sc', scrollY > 20); let on = -1; links.forEach((a, i) => { const s = $(a.getAttribute('href')); if (s && s.getBoundingClientRect().top < innerHeight * .35) on = i; }); links.forEach((a, i) => a.classList.toggle('on', i === on)); }; addEventListener('scroll', f, { passive: true }); f(); }
-  sea(); reveals(); nav(); sim(); story(); walletInit(); loadBasket(); loadCoins(); setInterval(loadBasket, 45000); setInterval(() => { loadCoins(); loadReserve(); }, 60000);
+  function caInit() { const b = $('#ca'); if (!b) return; b.addEventListener('click', async () => { const ca = b.dataset.ca; let ok = false;
+      try { await navigator.clipboard.writeText(ca); ok = true; } catch (e) { const t = document.createElement('textarea'); t.value = ca; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.append(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
+      if (ok) { b.classList.add('ok'); setT('#caI', 'copied'); toast('Contract address copied.'); clearTimeout(b._t); b._t = setTimeout(() => { b.classList.remove('ok'); setT('#caI', 'copy'); }, 1800); } else toast(ca); }); }
+  caInit(); sea(); reveals(); nav(); sim(); story(); walletInit(); loadBasket(); loadCoins(); setInterval(loadBasket, 45000); setInterval(() => { loadCoins(); loadReserve(); }, 60000);
 })();
